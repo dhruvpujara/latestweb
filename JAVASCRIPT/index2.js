@@ -5,30 +5,25 @@ let contactus = document.querySelector(".contactus");
 let currmode = "light";
 let modebtn = document.querySelector(".mdbtn");
 
+// Add error checking and ensure elements exist
+if (!bar || !bardiv) {
+    console.error("Required elements not found");
+} else {
+    let barmenu = true;
+    bar.addEventListener("click", () => {
+        barmenu = !barmenu;
+        bardiv.classList.toggle("hidebardiv", !barmenu);
+    });
+}
 
-
-let barmenu = false;
-bar.addEventListener("click",() =>{
- 
-  barmenu = !barmenu;
-  if (barmenu) {
-      bardiv.classList.add("hidebardiv")
-  } else{
-    bardiv.classList.remove("hidebardiv")
-  }
-})
-
-// modebtn.addEventListener("click", () => {
-//   if (currmode == "light") {
-//     currmode = "dark";
-//     content.classList.remove("img2");
-//     content.classList.add("img1");
-//   } else {
-//     currmode = "light";
-//     content.classList.remove("img1");
-//     content.classList.add("img2");
-//   }
-// });
+// Only add mode button listener if the button exists
+if (modebtn) {
+    modebtn.addEventListener("click", () => {
+        currmode = currmode === "light" ? "dark" : "light";
+        content.classList.toggle("img1", currmode === "dark");
+        content.classList.toggle("img2", currmode === "light");
+    });
+}
 
 animes2.forEach((anime2) => {
     let div = document.createElement("div");
