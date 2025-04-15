@@ -14,39 +14,58 @@
     <link rel="stylesheet" href="output.css" />
   </head>
   <body>
-    <header class="sticky top-0 z-0">
-      <div class="flex w-full justify-between items-center bg-black text-white h-[2rem] px-4 text-sm ">
+    <header class="sticky top-0 z-50 shadow-lg">
+      <div class="flex w-full justify-between items-center bg-[#1E2A38] text-white h-14 px-6">
         <% if (typeof username !== "undefined" && username) { %>
-          <div class="flex justify-center text-sm items-center gap-1"><i class="fa-regular fa-user useri"></i> <%= username %></div>
+          <div class="flex items-center gap-2 text-base hover:text-[#ff416c] transition-colors"><i class="fa-regular fa-user"></i> <%= username %></div>
         <% } else { %>
-          <p  class="flex justify-center"><i class="fa-solid fa-users-slash  useri"></i></p>
+          <p class="flex items-center text-base hover:text-[#ff416c] transition-colors"><i class="fa-solid fa-users-slash"></i></p>
         <% } %>
-       <div class="navser flex justify-center w-[70%] h-[1.5rem]">
-       <input placeholder="search" class="bg-[#34495E] h-[80%] w-[80%] rounded-lg px-2 text-sm" />
-       <button class="flex justify-center h-[90%] mx-2 text-sm items-center"><i class="fa-solid fa-magnifying-glass"></i></button>
-      </div>
-      <div class="sociall-div  hidden">
-        <button class="bg-[#E1306C]"id="insta"><i class="fa-brands fa-instagram"></i></button>
-        <button class="bg-[#3B5998]" id="facebook"><i class="fa-brands fa-facebook"></i></button>
-        <button class="bg-[#25D366]" id="whatsapp"><i class="fa-brands fa-whatsapp"></i></button>
-      </div>
-          <div class="bar flex justify-center py-1 text-lg"><i class="fa-solid fa-bars"></i></div>
+        
+        <div class="navser flex items-center w-[60%] max-w-2xl">
+          <input placeholder="Search anime..." class="bg-[#34495E] h-10 w-full rounded-l-lg px-4 text-base focus:outline-none focus:ring-2 focus:ring-[#ff416c] transition-all" />
+          <button class="bg-[#ff416c] h-10 px-4 rounded-r-lg hover:bg-[#ff4b2b] transition-colors">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+
+        <div class="sociall-div hidden md:flex gap-3">
+          <button class="w-8 h-8 rounded-full bg-[#E1306C] hover:scale-110 transition-transform" id="insta"><i class="fa-brands fa-instagram"></i></button>
+          <button class="w-8 h-8 rounded-full bg-[#3B5998] hover:scale-110 transition-transform" id="facebook"><i class="fa-brands fa-facebook"></i></button>
+          <button class="w-8 h-8 rounded-full bg-[#25D366] hover:scale-110 transition-transform" id="whatsapp"><i class="fa-brands fa-whatsapp"></i></button>
+        </div>
+        
+        <div class="bar md:hidden cursor-pointer p-2 hover:text-[#ff416c] transition-colors">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </div>
       </div>
     </header>
 
-    <div class="content flex-wrap flex justify-center img1 relative">
-      <div class="bardiv hidebardiv text-white flex flex-col  items-center w-[36%] h-[100vh] z-50 fixed top-8 right-0 bg-black">
-        <a href="login" class="baropt z-30 flex items-center h-[7%] ">LOGIN</a>
-        <a href="w2g" class="baropt z-30 flex items-center h-[7%]">watch together <i class="fa-solid fa-wifi"></i></a>
-        <a href="trending" class="baropt z-30 flex items-center h-[7%]">TRENDING</a>
-        <a href="wishlist" class="baropt z-30 flex items-center h-[7%]">FAVOURITES</a>
-        <button class="mdbtn baropt z-30 flex items-center h-[7%]">mode</button>
+    <div class="content flex-wrap flex justify-center relative img1">
+      <div class="bardiv hidebardiv text-white flex flex-col items-center w-72 h-screen fixed top-14 right-0 bg-[#1E2A38] transform transition-transform duration-300 ease-in-out">
+        <a href="login" class="baropt w-full py-4 px-6 hover:bg-[#ff416c] transition-colors flex items-center gap-3">
+          <i class="fa-solid fa-right-to-bracket"></i> LOGIN
+        </a>
+        <a href="w2g" class="baropt w-full py-4 px-6 hover:bg-[#ff416c] transition-colors flex items-center gap-3">
+          <i class="fa-solid fa-wifi"></i> Watch Together
+        </a>
+        <a href="trending" class="baropt w-full py-4 px-6 hover:bg-[#ff416c] transition-colors flex items-center gap-3">
+          <i class="fa-solid fa-fire"></i> TRENDING
+        </a>
+        <a href="wishlist" class="baropt w-full py-4 px-6 hover:bg-[#ff416c] transition-colors flex items-center gap-3">
+          <i class="fa-solid fa-heart"></i> FAVOURITES
+        </a>
+        <button class="mdbtn w-full py-4 px-6 hover:bg-[#ff416c] transition-colors flex items-center gap-3">
+          <i class="fa-solid fa-moon"></i> Mode
+        </button>
       </div>
     </div>
 
-  <div class="flex justify-center my-8" >
-    <button ><a href="index2.ejs"  class="text-xl bg-[#007bff] rounded-lg text-white px-4 py-2 my-4 cursor-pointer"  >bing more</a></button> 
-  </div>
+    <div class="flex justify-center my-12">
+      <a href="index2.ejs" class="bg-gradient-to-r from-[#ff416c] to-[#ff4b2b] text-white text-xl px-8 py-3 rounded-full hover:scale-105 hover:shadow-lg hover:shadow-[#ff416c]/30 transition-all duration-300">
+        Binge More
+      </a>
+    </div>
    
     <footer class="flex w-full justify-between items-center bg-black text-white h-[2rem]  text-sm">
       <a class="contactus">contact us <i class="fa-solid fa-phone"></i> </a>

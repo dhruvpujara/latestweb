@@ -1,18 +1,16 @@
+
 git init
 
+git remote remove origin
 git remote add origin https://github.com/dhruvpujara/latestweb.git
 
-// Pull existing changes first
-git pull origin main --allow-unrelated-histories
-
-// Stage and commit your changes
 git add .
-git commit -m "Updated project files"
 
-// Push to remote repository
-git push -u origin main
+git commit -m "Reset repository with latest changes"
 
-// For future updates:
+git push -f origin main
+
+// For future updates (normal flow):
 // git pull origin main
 // git add .
 // git commit -m "Update message"

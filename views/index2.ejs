@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DD Toons - More Content</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -13,41 +14,57 @@
     <link rel="stylesheet" href="/public/output.css" />
 </head>
 
-<body class="h-auto">
-  <header>
-    <div class="flex w-full justify-between items-center bg-black text-white h-[4rem] px-4 text-lg">
+<body class="min-h-screen bg-[#0D1B2A]">
+  <header class="sticky top-0 z-50 shadow-lg">
+    <div class="flex w-full justify-between items-center bg-[#1E2A38] text-white min-h-[3.2vh] py-2 px-[4vw]">
+      <div class="w-8"></div> <!-- Spacer for layout balance -->
 
-      <% if (typeof username !== "undefined" && username) { %>
-        <div class="flex justify-center text-xl items-center gap-1"><i class="fa-regular fa-user useri"><i class="fa-regular fa-user useri"></i> <%= username %></div>
-      <% } else { %>
-        <p><i class="fa-solid fa-users-slash flex justify-center useri"></i></p>
-      <% } %>
-
-     <div class="navser flex justify-center w-[70%] h-[2.5rem]">
-     <input placeholder="search" id="navserinp"  class="bg-[#34495E] h-[100%] w-[80%] rounded-xl px-4 text-4xl py-1"  />
-     <button id="navserbut" class="flex justify-center h-[95%] mx-2 text-2xl items-center"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <div class="navser flex items-center w-[min(75%,800px)] mx-auto">
+        <input 
+          placeholder="Search anime..." 
+          id="navserinp"  
+          class="bg-[#34495E] h-[2rem] w-full rounded-l-lg px-4 text-sm focus:outline-none focus:ring-2 focus:ring-[#ff416c] transition-all"
+        />
+        <button 
+          id="navserbut" 
+          class="bg-[#ff416c] h-[2rem] px-4 rounded-r-lg hover:bg-[#ff4b2b] transition-colors"
+        >
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
       </div>
-        <div class="bar"><i class="fa-solid fa-bars"></i></div>
+
+      <div class="bar cursor-pointer p-2 hover:text-[#ff416c] transition-colors">
+        <i class="fa-solid fa-bars text-xl"></i>
+      </div>
     </div>
   </header>
 
-  <div class="content flex-wrap flex justify-center img1"></div>
-
-
-  <div class="flex justify-center my-8" >
-    <button ><a href="index"  class="text-4xl bg-[#007bff] rounded-lg text-white px-4 py-2 my-4 cursor-pointer"  >home page </a></button>
+  <div class="content flex-wrap flex justify-center relative gap-4 p-6 img1">
+    <!-- Content will be populated by JavaScript -->
   </div>
 
-      <footer  class="flex w-full justify-between items-center bg-black text-white h-[4rem] px-2  py-2 text-3xl">
-        <a class="contactus">contact us <i class="fa-solid fa-phone"></i> </a>
-        <a>copyrights <i class="fa-regular fa-copyright"></i> </a>
-        <a class="repbug" href="rep-bugs">report bugs <i class="fa-solid fa-wrench"></i> </a>
-        <a>suggest content <i class="fa-regular fa-comment"></i></a>
-      </footer>
+  <div class="flex justify-center my-[clamp(2rem,5vh,4rem)]">
+    <a href="index" class="bg-gradient-to-r from-[#ff416c] to-[#ff4b2b] text-white text-[clamp(1rem,1.5vw,1.5rem)] px-[clamp(1.5rem,4vw,3rem)] py-[clamp(0.75rem,2vh,1.5rem)] rounded-full hover:scale-105 hover:shadow-lg hover:shadow-[#ff416c]/30 transition-all duration-300">
+      Back to Home
+    </a>
+  </div>
 
+  <footer class="flex w-full justify-between items-center bg-[#1E2A38] text-white py-[clamp(1rem,3vh,2rem)] px-[4vw] text-[clamp(0.875rem,1.2vw,1.2rem)]">
+    <a class="contactus hover:text-[#ff416c] transition-colors flex items-center gap-2">
+      Contact Us <i class="fa-solid fa-phone"></i>
+    </a>
+    <a class="hover:text-[#ff416c] transition-colors flex items-center gap-2">
+      Copyrights <i class="fa-regular fa-copyright"></i>
+    </a>
+    <a class="repbug hover:text-[#ff416c] transition-colors flex items-center gap-2" href="rep-bugs">
+      Report Bugs <i class="fa-solid fa-wrench"></i>
+    </a>
+    <a class="hover:text-[#ff416c] transition-colors flex items-center gap-2">
+      Suggest Content <i class="fa-regular fa-comment"></i>
+    </a>
+  </footer>
 
-
-      <script src="links2.js"></script>
-      <script src="index2.js"></script>
+  <script src="links2.js"></script>
+  <script src="index2.js"></script>
 </body>
 </html>
