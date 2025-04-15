@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Bugs</title>
+    <link rel="stylesheet" href="output.css" />
+</head>
+<body class="bg-[#0D1B2A] flex flex-col items-center justify-center h-screen">
+
+
+  <div class=" w-96 h-auto text-white text-center p-3 font-medium  text-4xl gap-5">
+    <h1></h1>Report Your Issue</h1>
+  </div>
+
+
+    <form method="post" action="/bug-reported"class="bg-[#1E2A38] w-96 h-auto rounded-lg text-white text-center p-3 font-medium gap-5 mt-10">
+        <div class=" w-full flex my-6 place-content-between">
+            <label for="name" class="mr-3 text-xl">Name</label>        
+            <input type="text" name="name" id="name" placeholder="Enter your name" class="w-2/3 rounded-lg p-2" required>
+        </div>
+        <div class=" w-full flex my-6 place-content-between">
+            <label for="contact"  class="mr-3 text-xl">Contact No</label>
+            <input type="text" name="contact" id="contact" placeholder="Enter your contact number" class="w-2/3 rounded-lg p-2" required>
+        </div>
+        <div class=" w-full flex my-6 place-content-between">
+            <label for="description"  class="mr-3 text-xl " >Description</label>
+            <textarea name="description" id="description" placeholder="Describe the issue" class="w-2/3 rounded-lg p-2 text-black" required></textarea>
+        </div>
+        <button type="submit" class=" bg-gradient-to-r from-[#ff416c] to-[#ff4b2b] text-white text-xl px-4 py-2 my-4 rounded-md">Submit</button>
+    </form>
+</body>
+</html>

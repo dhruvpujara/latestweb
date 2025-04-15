@@ -1,0 +1,174 @@
+
+/* trending page */
+
+h1 {
+    font-size: 50px;
+    display: inline-block;
+}
+
+i {
+    margin-left: 20px;
+    display: inline-block;
+    font-size: 50px;
+}
+
+.trenbody {
+    text-align: center;
+    background-image: url("https://static.vecteezy.com/system/resources/previews/022/272/441/original/abstract-color-polygon-background-design-abstract-geometric-origami-style-with-gradient-free-vector.jpg");
+    font-style: italic;
+    color: white;
+}
+
+.treAINME {
+    display: inline-block;
+    margin-right: 40px;
+    margin-top: 20px;
+    border-radius: 10px;
+    height: 400px;
+    width: 200px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+/* wishlist page */
+
+.wishbody{
+    text-align: center;
+    color: azure;
+    background-image: url("https://static.vecteezy.com/system/resources/previews/022/272/441/original/abstract-color-polygon-background-design-abstract-geometric-origami-style-with-gradient-free-vector.jpg");
+}
+
+.wish{
+    height: 100vh;
+    width: 100vw;
+}
+
+.w2gbody {
+    color: white;
+    background-image: url("https://static.vecteezy.com/system/resources/previews/022/272/441/original/abstract-color-polygon-background-design-abstract-geometric-origami-style-with-gradient-free-vector.jpg");
+    background-size: cover;
+    background-position: center;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Title Styling */
+.w2gh1 {
+    font-size: 5vmin;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+}
+
+/* Code Box - Glassmorphism */
+.code {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5vmin;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ff416c;
+    height: 12vh;
+    width: 30vw;
+    border-radius: 15px;
+    letter-spacing: 15px;
+    font-weight: bold;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.code:hover {
+    box-shadow: 0 0 20px rgba(255, 75, 43, 0.8);
+}
+
+/* Steps List */
+ol {
+    font-size: 3vmin;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 15px;
+    width: 40%;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* List Items */
+li {
+    font-size: 2.5vmin;
+    line-height: 5vmin;
+    padding: 5px 0;
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover effect on List Items */
+li:hover {
+    color: #ff416c;
+    text-shadow: 0 0 10px rgba(255, 75, 43, 0.8);
+}
+
+@media (max-width:600px) {
+    
+.pg{
+    width: 75VW;
+}
+
+.pg2{
+    width: 75VW;
+}
+
+.loginimg{ 
+    width: 80vw; margin-left:-1%;
+}
+
+.conntent{ 
+    font-size: 3vmin;
+    height: 5%;
+    width: 80%;
+    padding: 2px 0 3px 5px;
+}
+
+.crtacc,.loginbutt,.log_a  {
+    width: 80%;
+    font-size: 4vmin;
+}
+
+  /* w2g */
+
+  .code{
+    width: 70%;
+    height:15vmin;
+    margin: 10%;
+  }
+
+  .w2gh1{ margin-left: 20%;}
+
+  ol {
+    font-size: 5vmin;
+    width: 60%;
+    margin-top: 10%;
+}
+
+li , li i  {
+    font-size: 6vmin;
+    line-height: 7vmin;
+    
+}
+
+.w2gbody{
+    height: 100%;
+    display: flex;
+    align-items: flex-start;  
+}
+}
+
+
