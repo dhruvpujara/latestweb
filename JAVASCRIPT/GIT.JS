@@ -1,25 +1,19 @@
-// Initialize git repository
 git init
 
-// Add remote repository
 git remote add origin https://github.com/dhruvpujara/latestweb.git
 
-// First check status of changes
-git status
+// Pull existing changes first
+git pull origin main --allow-unrelated-histories
 
-// Add all files to staging
+// Stage and commit your changes
 git add .
+git commit -m "Updated project files"
 
-// Initial commit
-git commit -m "Initial commit"
-
-// Set main branch (if not already set)
-git branch -M main
-
-// Push to GitHub
+// Push to remote repository
 git push -u origin main
 
-// For subsequent updates, use:
+// For future updates:
+// git pull origin main
 // git add .
 // git commit -m "Update message"
 // git push origin main
