@@ -8,7 +8,12 @@ exports.gethome = (req, res, next) => {
 };
 
 exports.getindex = (req, res, next) => {
-    res.render('index');
+    const loggeduser = req.session.loggeduser;
+    if (loggeduser) {
+        res.render('index', { username: loggeduser.username });
+    } else {
+        res.render('index');
+    }
 };
 
 exports.gettrending = (req, res, next) => {
@@ -96,13 +101,24 @@ exports.getbugreported = (req, res, next) => {
 };
 
 exports.postindex = async (req, res, next) => {
-    let { username, password } = req.body;
-    const loggeduser =await user.loginusser(username, password);
-    if (loggeduser) {
-        req.session.loggeduser = loggeduser;
-        res.render('index', { username: loggeduser.username });
+    const loggeduser = req.session.loggeduser;
+    if (!loggeduser) {
+        let { username, password } = req.body;
+        const loggeduser = await user.loginusser(username, password);
+        if (loggeduser) {
+            req.session.loggeduser = {
+                username: loggeduser.username,
+                id: loggeduser._id // assuming your user object has an ID
+            };
+            req.session.save((err) => {
+                if (err) console.error('Session save error:', err);
+                res.render('index', { username: loggeduser.username });
+            });
+        } else {
+            res.status(401).send('Invalid username or password');
+        }
     } else {
-        res.status(401).send('Invalid username or password');
+        res.render('index', { username: loggeduser.username });
     }
 };
 
@@ -123,7 +139,15 @@ exports.postanimedet = async (req, res, next) => {
 exports.postlogin = (req, res, next) => {
     const { username2, password2, mobileno } = req.body;
     const newuser = new user(username2, password2, mobileno);
-    newuser.adduser();
-    res.redirect('/acccrsuc');
+    req.session.loggeduser = {
+        username: username2,
+        id: newuser._id // assuming your user object has an ID
+    };
+    req.session.save((err) => {
+        if (err) console.error('Session save error:', err);
+        newuser.adduser();
+        res.redirect('/acccrsuc');
+    });
 };
+
 
